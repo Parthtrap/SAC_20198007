@@ -4,6 +4,7 @@
   margin: 0px;
   padding: 0px;
   user-select: none;
+  font-family: 'Roboto', sans-serif;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -65,21 +66,21 @@ body::-webkit-scrollbar {
   color: whitesmoke;
   transition: 0.8s;
   border: 1px solid #ec1840;
+  border-radius: 100px;
 }
 
 .homepage-heading-timeline-link:hover {
   border: 1px solid transparent;
-  background: #ec1840 url(https://i.postimg.cc/wBXGXbWN/pixel.png);
-  transition-delay: 0.8s;
-  background-size: 180px;
-  animation: animate 0.8s steps(8) forwards;
+  animation: animate 1s;
+  border: 1px solid #ec1840;
+  background-color: #850d24;
 }
 @keyframes animate {
   0% {
-    background-position-y: 0;
+    background-color: none !important;
   }
   100% {
-    background-position-y: -480px;
+    background-color: #850d24 !important;
   }
 }
 
@@ -89,16 +90,22 @@ body::-webkit-scrollbar {
   height: 50vh;
   margin-bottom: 20px;
   margin-top: 20px;
+  width: 100vw;
 }
 
 .homepage-aboutSAC-box {
   width: 50vw;
+  padding: 20px;
+}
+.homepage-aboutSAC-box.about-text {
+  background-color: #ec1840;
+  margin: 10px;
+  border-radius: 20px;
 }
 .homepage-aboutSAC-text.title {
   font-weight: 600;
   text-align: center;
   font-size: 40px;
-  margin-top: 10px;
 }
 .homepage-aboutSAC-text.description {
   padding: 10px;
@@ -116,16 +123,38 @@ body::-webkit-scrollbar {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+  margin-bottom: 2rem;
 }
+
+.event-row::-webkit-scrollbar {
+  height: 10px;
+}
+
+.event-row::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.event-row::-webkit-scrollbar-thumb {
+  background: #ec1840;
+  border-radius: 10px;
+}
+
+.event-row::-webkit-scrollbar-thumb:hover {
+  background: #b91232;
+}
+
 .event-card {
   max-width: 200px;
   height: 300px;
   padding: 0.75rem;
-  margin-bottom: 2rem;
   border: 0;
   flex-basis: 33.333%;
   flex-grow: 0;
   flex-shrink: 0;
+  border: #222 1px solid;
+  border-radius: 20px;
+  margin: 10px;
 }
 
 .event-card > img {
@@ -133,6 +162,7 @@ body::-webkit-scrollbar {
   max-width: 200px;
   margin-bottom: 0.75rem;
   width: 100%;
+  border-radius: 20px 20px 0 0;
 }
 
 .event-card-title {
@@ -156,17 +186,35 @@ body::-webkit-scrollbar {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.club-row::-webkit-scrollbar {
+  height: 10px;
 }
 
-.flip-card {
+.club-row::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.club-row::-webkit-scrollbar-thumb {
+  background: #ec1840;
+  border-radius: 10px;
+}
+
+.club-row::-webkit-scrollbar-thumb:hover {
+  background: #b91232;
+}
+
+.club-card {
   background-color: transparent;
   width: 300px;
   height: 300px;
   perspective: 1000px;
   margin-left: 30px;
 }
-.flip-card:last-of-type {
+.club-card:last-of-type {
   background-color: transparent;
   width: 300px;
   height: 300px;
@@ -174,7 +222,7 @@ body::-webkit-scrollbar {
   margin-left: 30px;
   margin-right: 30px;
 }
-.flip-card-inner {
+.club-card-inner {
   position: relative;
   width: 300px;
   height: 300px;
@@ -182,24 +230,24 @@ body::-webkit-scrollbar {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.flip-card:hover .flip-card-inner {
+.club-card:hover .club-card-inner {
   transform: rotateY(180deg);
 }
-.flip-card-front,
-.flip-card-back {
+.club-card-front,
+.club-card-back {
   position: absolute;
   width: 300px;
   height: 300px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.flip-card-front {
+.club-card-front {
   background-color: #bbb;
   color: black;
   overflow: hidden;
 }
-.flip-card-back {
-  background-color: dodgerblue;
+.club-card-back {
+  background-color: #b91232;
   color: white;
   transform: rotateY(180deg);
 }
@@ -213,7 +261,7 @@ body::-webkit-scrollbar {
 .footer {
   width: 100%;
   margin-top: 20px;
-  background-color: rgb(35, 55, 107);
+  background-color: #850d24;
   color: white;
   display: flex;
   justify-content: center;
@@ -233,7 +281,7 @@ body::-webkit-scrollbar {
   min-width: 100px;
   min-height: 100px;
   border-radius: 50%;
-  background: rgb(18, 29, 56);
+  background: #520816;
 }
 
 .footer-text {
@@ -261,7 +309,7 @@ body::-webkit-scrollbar {
 }
 
 .footer-item:hover {
-  background: rgb(18, 29, 56);
+  background: #520816;
 }
 
 @media (max-width: 770px) {
@@ -283,5 +331,9 @@ body::-webkit-scrollbar {
   .homepage-aboutSAC-box {
     width: 100vw;
     height: 300px;
+  }
+  .homepage-aboutSAC-box.about-text {
+    margin: 1vw;
+    width: 90vw;
   }
 }
